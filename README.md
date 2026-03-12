@@ -1,10 +1,10 @@
-<img width="1717" height="1185" alt="image" src="https://github.com/user-attachments/assets/abcd0876-0673-4ad6-b307-ede6ae7275f1" />
-
 # Earth Twin
 
 Earth Twin is an interactive 3D globe explorer built for the web. It allows users to navigate from a planetary view down to city-scale terrain and buildings, search for places around the world, and interact with mapped urban structures through a clean browser-based interface.
 
 The project is designed to feel like a lightweight digital twin prototype: visually immersive, responsive in a regular web browser, and enriched with real-world location context.
+
+<img width="1717" height="1185" alt="image" src="https://github.com/user-attachments/assets/abcd0876-0673-4ad6-b307-ede6ae7275f1" />
 
 ## Features
 
