@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Earth Twin</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <div id="toolbar">
+  <div class="brand">
+    <h1 id="infoTitle">Earth Twin</h1>
+    <p id="infoSubtitle">Global 3D Explorer</p>
+    <p id="infoDescription">
+      Explore the globe from orbit down to city-scale terrain and buildings.
+    </p>
+  </div>
+
+  <div id="buildingCard">
+  <div class="buildingCardHeader">
+    <h3 id="buildingTitle">Building</h3>
+  </div>
+  <p id="buildingDescription"></p>
+  <div id="buildingMeta"></div>
+</div>
+
+<div class="searchWrap">
+  <div class="searchRow">
+    <input
+      id="locationSearch"
+      type="text"
+      placeholder="Search for a city, landmark, or region"
+      autocomplete="off"
+    />
+    <button id="searchButton">Search</button>
+  </div>
+
+  <div id="suggestions"></div>
+  <p id="searchStatus"></p>
+</div>
+
+
+
+  <div class="controls">
+    <button data-city="newyork">New York</button>
+    <button data-city="chicago">Chicago</button>
+    <button data-city="tokyo">Tokyo</button>
+    <button data-city="paris">Paris</button>
+    <button id="resetView">Reset</button>
+  </div>
+
+  <div class="toggles">
+    <label>
+      <input type="checkbox" id="toggleBuildings" checked />
+      Buildings
+    </label>
+    <label>
+      <input type="checkbox" id="toggleLighting" checked />
+      Day/Night
+    </label>
+    <label>
+      <input type="checkbox" id="toggleAtmosphere" checked />
+      Atmosphere
+    </label>
+  </div>
+</div>
+
+      <div id="cesiumContainer"></div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

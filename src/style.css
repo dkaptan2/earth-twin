@@ -1,0 +1,261 @@
+
+html,
+body,
+#app,
+#cesiumContainer {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  font-family: Inter, Arial, sans-serif;
+  background: #05070b;
+  color: white;
+}
+
+#toolbar {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 10;
+  width: min(420px, calc(100vw - 32px));
+  background: rgba(8, 12, 20, 0.82);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 14px 14px 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.brand h1 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.brand p {
+  margin: 4px 0 12px;
+  font-size: 0.92rem;
+  opacity: 0.8;
+}
+
+.controls,
+.toggles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+button {
+  border: 0;
+  border-radius: 10px;
+  padding: 9px 12px;
+  background: #1d6cff;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+button:hover {
+  filter: brightness(1.08);
+}
+
+label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.92rem;
+  background: rgba(255, 255, 255, 0.04);
+  padding: 8px 10px;
+  border-radius: 10px;
+}
+
+.cesium-viewer-toolbar,
+.cesium-viewer-animationContainer,
+.cesium-viewer-timelineContainer,
+.cesium-viewer-bottom {
+  display: none !important;
+}
+
+@media (max-width: 640px) {
+  #toolbar {
+    width: calc(100vw - 24px);
+    top: 12px;
+    left: 12px;
+    padding: 12px;
+  }
+
+  .brand p {
+    font-size: 0.85rem;
+  }
+
+  #infoTitle {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+#infoSubtitle {
+  margin: 6px 0 4px;
+  font-size: 0.95rem;
+  opacity: 0.82;
+}
+
+#infoDescription {
+  margin: 0 0 12px;
+  font-size: 0.88rem;
+  line-height: 1.4;
+  opacity: 0.78;
+}
+
+.searchWrap {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.searchRow {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+#locationSearch {
+  flex: 1;
+  min-width: 0;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.06);
+  color: white;
+  border-radius: 10px;
+  padding: 10px 12px;
+  outline: none;
+}
+
+#locationSearch::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+#locationSearch:focus {
+  border-color: rgba(70, 130, 255, 0.8);
+  box-shadow: 0 0 0 3px rgba(70, 130, 255, 0.15);
+}
+
+#suggestions {
+  display: none;
+  position: absolute;
+  top: 46px;
+  left: 0;
+  right: 0;
+  z-index: 30;
+  background: rgba(10, 14, 22, 0.98);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+.suggestionItem {
+  width: 100%;
+  text-align: left;
+  border: 0;
+  border-radius: 0;
+  padding: 11px 12px;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.suggestionItem:hover,
+.suggestionItem.active {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+#buildingCard {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  z-index: 20;
+  width: min(340px, calc(100vw - 32px));
+  background: rgba(10, 14, 22, 0.94);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(12px);
+  display: none;
+}
+
+#buildingCard.show {
+  display: block;
+}
+
+.buildingCardHeader {
+  margin-bottom: 10px;
+}
+
+#buildingTitle {
+  margin: 0;
+  font-size: 1.05rem;
+  color: white;
+  line-height: 1.25;
+}
+
+#buildingDescription {
+  margin: 0 0 14px;
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 0.94rem;
+  line-height: 1.5;
+}
+
+#buildingMeta {
+  display: grid;
+  gap: 10px;
+}
+
+.buildingMetaRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.buildingMetaRow span {
+  color: rgba(255, 255, 255, 0.64);
+  font-size: 0.88rem;
+}
+
+.buildingMetaRow strong {
+  color: white;
+  font-size: 0.92rem;
+}
+
+.suggestionItem {
+  width: 100%;
+  text-align: left;
+  border: 0;
+  border-radius: 0;
+  padding: 11px 12px;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.suggestionItem:hover,
+.suggestionItem.active {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+#searchStatus {
+  margin: 0;
+  min-height: 18px;
+  font-size: 0.83rem;
+  opacity: 0.75;
+}
+
+  button,
+  label {
+    font-size: 0.85rem;
+  }
+}
