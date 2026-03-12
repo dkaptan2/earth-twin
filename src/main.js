@@ -3,8 +3,8 @@ import * as Cesium from "cesium";
 
 window.CESIUM_BASE_URL = "/cesiumStatic";
 
-// token
-Cesium.Ion.defaultAccessToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJhYzYzNTQyZC0xYTE5LTQ5YzYtOGE3Mi1jNjcyZDI3NmEzOTMiLCJpZCI6NDAyNjc3LCJpYXQiOjE3NzMzNDY3OTF9.niApnX5TORftj3uAc5G1wpSOC-bkqvpd408REqkQ-ak";
+// put in your own token
+Cesium.Ion.defaultAccessToken = "INSERT_CESIUM_TOKEN_HERE";
 
 const cityViews = {
   newyork: {
