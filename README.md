@@ -29,6 +29,8 @@ This project was built to demonstrate:
 - public API integration for place enrichment
 - UI/UX decisions for technical product demos
 
+<img width="1718" height="1179" alt="image" src="https://github.com/user-attachments/assets/4ded107d-f099-42be-a0e6-8acce9bc3c99" />
+
 ## Tech Stack
 
 - **CesiumJS** for 3D globe rendering and geospatial interaction
