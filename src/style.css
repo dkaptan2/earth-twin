@@ -254,6 +254,17 @@ label {
   opacity: 0.75;
 }
 
+.desc-toggle {
+  color: #4da3ff;
+  margin-left: 6px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.desc-toggle:hover {
+  text-decoration: underline;
+}
+
   button,
   label {
     font-size: 0.85rem;

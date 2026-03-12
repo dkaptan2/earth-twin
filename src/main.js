@@ -66,9 +66,16 @@ async function fetchJson(url, options = {}) {
 }
 
 function truncateText(text, maxLength = 220) {
-  if (!text) return "";
-  if (text.length <= maxLength) return text;
-  return text.slice(0, maxLength).trimEnd() + "...";
+  if (!text) return { short: "", full: "" };
+
+  if (text.length <= maxLength) {
+    return { short: text, full: text };
+  }
+
+  return {
+    short: text.slice(0, maxLength).trimEnd() + "...",
+    full: text
+  };
 }
 
 function formatAddressParts(address = {}) {
@@ -719,7 +726,32 @@ async function init() {
       height: numericHeight
     });
 
-    buildingDescription.textContent = enriched.description;
+    const truncated = truncateText(enriched.description);
+
+buildingDescription.innerHTML = `
+<span class="desc-short">${truncated.short}</span>
+<span class="desc-full" style="display:none">${truncated.full}</span>
+<span class="desc-toggle">Read more</span>
+`;
+const toggle = buildingDescription.querySelector(".desc-toggle");
+const shortText = buildingDescription.querySelector(".desc-short");
+const fullText = buildingDescription.querySelector(".desc-full");
+
+if (toggle) {
+  toggle.addEventListener("click", () => {
+    const expanded = fullText.style.display === "inline";
+
+    if (expanded) {
+      fullText.style.display = "none";
+      shortText.style.display = "inline";
+      toggle.textContent = "Read more";
+    } else {
+      shortText.style.display = "none";
+      fullText.style.display = "inline";
+      toggle.textContent = "Show less";
+    }
+  });
+}
 
     const locationLabel =
       enriched.district && enriched.locality
